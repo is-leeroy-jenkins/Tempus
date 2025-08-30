@@ -10,7 +10,7 @@
     ******************************************************************************************
     <copyright file="budget_fiscal_year.py" company="Terry D. Eppler">
     
-         Budget Tempus Year Tools
+         Budget tempus Year Tools
     
      Permission is hereby granted, free of charge, to any person obtaining a copy
      of this software and associated documentation files (the “Software”),
@@ -98,8 +98,8 @@ class FiscalYear( ):
         
         Purpose:
         --------
-        Encapsulate U.S. federal Budget Tempus Year (FY) logic. Given any calendar date,
-        compute Calendar Year (CY), Tempus Year (FY), Beginning/Ending FY (BBFY/EBFY), and
+        Encapsulate U.S. federal Budget tempus Year (FY) logic. Given any calendar date,
+        compute Calendar Year (CY), tempus Year (FY), Beginning/Ending FY (BBFY/EBFY), and
         both calendar and fiscal year boundaries. Provide elapsed/remaining days and months,
         day-of-year indices, percent complete, and convenience boundary/holiday checks.
         
@@ -375,7 +375,7 @@ class FiscalYear( ):
             
             Purpose:
             --------
-            Get the 1-based day-of-year index within the Tempus Year.
+            Get the 1-based day-of-year index within the tempus Year.
     
             Returns:
             --------
@@ -398,7 +398,7 @@ class FiscalYear( ):
         
             Purpose:
             --------
-            Get the total number of days in the Tempus Year.
+            Get the total number of days in the tempus Year.
     
             Returns:
             --------
@@ -445,7 +445,7 @@ class FiscalYear( ):
             
             Purpose:
             --------
-            Compute completed days elapsed in the Tempus Year.
+            Compute completed days elapsed in the tempus Year.
     
             Returns:
             --------
@@ -468,7 +468,7 @@ class FiscalYear( ):
         
             Purpose:
             --------
-            Compute remaining days in the Tempus Year after `self.date`.
+            Compute remaining days in the tempus Year after `self.date`.
     
             Returns:
             --------
@@ -491,7 +491,7 @@ class FiscalYear( ):
             
             Purpose:
             --------
-            Compute completed months elapsed in the Tempus Year.
+            Compute completed months elapsed in the tempus Year.
     
             Returns:
             --------
@@ -514,7 +514,7 @@ class FiscalYear( ):
         
             Purpose:
             --------
-            Compute remaining months in the Tempus Year.
+            Compute remaining months in the tempus Year.
     
             Returns:
             --------
@@ -537,7 +537,7 @@ class FiscalYear( ):
         
             Purpose:
             --------
-            Compute percentage of the Tempus Year completed.
+            Compute percentage of the tempus Year completed.
     
             Returns:
             --------
@@ -600,7 +600,7 @@ class FiscalYear( ):
             Purpose:
             --------
             Count the number of U.S. federal holidays between two dates inclusive, restricted
-            to this Tempus Year.
+            to this tempus Year.
     
             Parameters:
             -----------
@@ -636,7 +636,7 @@ class FiscalYear( ):
             Purpose:
             --------
             Count the number of business days (Mon–Fri excluding holidays) between two dates
-            inclusive, restricted to this Tempus Year.
+            inclusive, restricted to this tempus Year.
     
             Parameters:
             -----------
@@ -700,7 +700,7 @@ class FiscalYear( ):
         
             Purpose:
             --------
-            Get the start/end dates for the Tempus Year containing `self.date`.
+            Get the start/end dates for the tempus Year containing `self.date`.
     
             Returns:
             --------
@@ -723,7 +723,7 @@ class FiscalYear( ):
         
             Purpose:
             --------
-            Determine whether `self.date` is the first day of the Tempus Year (Oct 1).
+            Determine whether `self.date` is the first day of the tempus Year (Oct 1).
     
             Returns:
             --------
@@ -746,7 +746,7 @@ class FiscalYear( ):
         
             Purpose:
             --------
-            Determine whether `self.date` is the last day of the Tempus Year (Sep 30).
+            Determine whether `self.date` is the last day of the tempus Year (Sep 30).
     
             Returns:
             --------
@@ -840,7 +840,7 @@ class FederalHoliday:
     
         Purpose:
         --------
-        Encapsulate U.S. federal holiday logic for a specific Tempus Year (FY). Computes
+        Encapsulate U.S. federal holiday logic for a specific tempus Year (FY). Computes
         actual and observed holiday dates that fall within the fiscal-year window.
     
         Fields:
@@ -865,7 +865,7 @@ class FederalHoliday:
     
             Parameters:
             -----------
-            fiscal_year (int): Tempus year label (end year).
+            fiscal_year (int): tempus year label (end year).
     
             Returns:
             --------

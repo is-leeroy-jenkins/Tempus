@@ -123,6 +123,6 @@
 
 
 
-### 📜 [License](https://github.com/is-leeroy-jenkins/Tempus/blob/master/LICENSE.txt)
+## 📜 [License](https://github.com/is-leeroy-jenkins/Tempus/blob/master/LICENSE.txt)
 
 - MIT © 2022 Terry D. Eppler
