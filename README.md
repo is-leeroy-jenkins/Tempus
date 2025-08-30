@@ -54,21 +54,21 @@
 
     bfy = FiscalYear(date(2025, 8, 27))
 
-    print(bfy.fiscal_year)                     # 2025
-    print(bfy.beginning_fiscal_year, bfy.ending_fiscal_year)  # 2024 2025
-    print(round(bfy.fiscal_percent_elapsed(), 2))             # e.g., 91.23
+    bfy.fiscal_year                     # 2024
+    bfy.beginning_fiscal_year, bfy.ending_fiscal_year)  # 2024 2025
+    round(bfy.fiscal_percent_elapsed(), 2)             # e.g., 91.23
 
 ## 🚀 Range utilities
 
-    print(bfy.count_workdays(date(2025, 8, 1), date(2025, 8, 31)))
-    print(bfy.count_weekends(date(2025, 8, 1), date(2025, 8, 31)))
-    print(bfy.count_holidays(date(2025, 1, 1), date(2025, 9, 30)))
+    bfy.count_workdays(date(2025, 8, 1), date(2025, 8, 31))
+    bfy.count_weekends(date(2025, 8, 1), date(2025, 8, 31))
+    bfy.count_holidays(date(2025, 1, 1), date(2025, 9, 30))
 
 ## ⚡ Holiday checks
 
     hol = FederalHoliday(bfy.fiscal_year)
-    print(hol.is_holiday(date(2025, 7, 4)))    # True (Independence Day)
-    print(hol.is_weekend(date(2025, 7, 5)))    # True (Saturday)
+    hol.is_holiday(date(2025, 7, 4))    # True (Independence Day)
+    hol.is_weekend(date(2025, 7, 5))    # True (Saturday)
 
 
 
@@ -109,4 +109,4 @@
 
 ### 📜 [License](https://github.com/is-leeroy-jenkins/Tempus/blob/master/LICENSE.txt)
 
-- MIT © 2020 Terry D. Eppler
+- MIT © 2022 Terry D. Eppler
