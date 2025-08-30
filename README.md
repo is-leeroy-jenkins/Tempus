@@ -6,7 +6,7 @@
 
 
 
-### 📝 Features
+## 📝 Features
 
 - **Fiscal Year Engine**  
   Compute CY, FY, Beginning/Ending FY (BBFY/EBFY), and both calendar/fiscal boundaries.
@@ -25,7 +25,7 @@
 
 
 
-### 🏗️ Installation
+## 🏗️ Installation
 
 - Use pip:
 
@@ -45,31 +45,34 @@
 
 
 
-### 🎯 Quick Start
+## 🎯 Quick Start
 
     from datetime import date
     from tempus import FiscalYear, FederalHoliday
 
-    # Bind a date to FiscalYear
+## 📊 Bind a date to FiscalYear
+
     bfy = FiscalYear(date(2025, 8, 27))
 
     print(bfy.fiscal_year)                     # 2025
     print(bfy.beginning_fiscal_year, bfy.ending_fiscal_year)  # 2024 2025
     print(round(bfy.fiscal_percent_elapsed(), 2))             # e.g., 91.23
 
-    # Range utilities
+## 🚀 Range utilities
+
     print(bfy.count_workdays(date(2025, 8, 1), date(2025, 8, 31)))
     print(bfy.count_weekends(date(2025, 8, 1), date(2025, 8, 31)))
     print(bfy.count_holidays(date(2025, 1, 1), date(2025, 9, 30)))
 
-    # Holiday checks
+## ⚡ Holiday checks
+
     hol = FederalHoliday(bfy.fiscal_year)
     print(hol.is_holiday(date(2025, 7, 4)))    # True (Independence Day)
     print(hol.is_weekend(date(2025, 7, 5)))    # True (Saturday)
 
 
 
-### 🧠 API Overview
+## 🧠 API Overview
 
 #### BudgetFiscalYear
 
@@ -86,7 +89,7 @@
 
 
 
-### 📝 Design Notes
+## 📝 Design Notes
 
 - **FY Naming**: FY is named for its ending year. For example, FY 2026 runs 2025-10-01 through 2026-09-30.  
 - **Observed Dates**: Saturday holidays observe on Friday; Sunday on Monday.  
@@ -95,7 +98,7 @@
 
 
 
-### 🏁 Roadmap
+## 🏁 Roadmap
 
 - ISO week numbers and fiscal week helpers  
 - Optional state/local holiday overlays  
@@ -104,15 +107,6 @@
 
 
 
-### 🚀 Contributing
-
-1. Fork and create a feature branch.  
-2. Follow PEP 8 and include Purpose / Parameters / Returns docstrings.  
-3. Add tests for all new logic.  
-4. Submit a PR with a clear description and examples.
-
-
-
 ### 📜 [License](https://github.com/is-leeroy-jenkins/Tempus/blob/master/LICENSE.txt)
 
-- MIT © 2025 Terry D. Eppler
+- MIT © 2020 Terry D. Eppler
