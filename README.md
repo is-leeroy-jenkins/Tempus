@@ -47,28 +47,44 @@
 
 ## 🎯 Quick Start
 
+```
+
     from datetime import date
     from tempus import FiscalYear, FederalHoliday
+    
+```
 
 ## 📊 Bind a date to FiscalYear
+
+```    
 
     bfy = FiscalYear(date(2025, 8, 27))
 
     bfy.fiscal_year                     # 2024
     bfy.beginning_fiscal_year, bfy.ending_fiscal_year)  # 2024 2025
     round(bfy.fiscal_percent_elapsed(), 2)             # e.g., 91.23
+    
+```
 
 ## 🚀 Range utilities
+
+```    
 
     bfy.count_workdays(date(2025, 8, 1), date(2025, 8, 31))
     bfy.count_weekends(date(2025, 8, 1), date(2025, 8, 31))
     bfy.count_holidays(date(2025, 1, 1), date(2025, 9, 30))
+    
+```
 
 ## ⚡ Holiday checks
+
+```    
 
     hol = FederalHoliday(bfy.fiscal_year)
     hol.is_holiday(date(2025, 7, 4))    # True (Independence Day)
     hol.is_weekend(date(2025, 7, 5))    # True (Saturday)
+    
+```
 
 
 
