@@ -1,2 +1,6 @@
 FreeSimpleGUI~=5.2.0.post1
 typing~=3.7.4.3
+pandas
+matplotlib
+seaborn
+seaborn
