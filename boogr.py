@@ -41,16 +41,10 @@
   ******************************************************************************************
   '''
 from __future__ import annotations
-import pydantic
-from pydantic import BaseModel
 import traceback
-import FreeSimpleGUI as sg
 from sys import exc_info
 from typing import List, Optional
-import html
-import re
-import unicodedata
-
+import FreeSimpleGUI as sg
 
 class Dark( ):
 	'''
@@ -78,7 +72,7 @@ class Dark( ):
 	theme_font: Optional[ Tuple[ str, int ] ]
 	scrollbar_color: Optional[ str ]
 	form_size: Optional[ Tuple[ int, int ] ]
-
+	
 	def __init__( self ):
 		sg.theme( 'DarkGrey15' )
 		sg.theme_input_text_color( '#FFFFFF' )
@@ -95,15 +89,14 @@ class Dark( ):
 		self.button_backcolor = sg.theme_button_color_background( )
 		self.button_forecolor = sg.theme_button_color_text( )
 		self.button_color = sg.theme_button_color( )
-		self.icon_path = r'\resources\images\mappy.ico'
-		self.theme_font = ( 'Roboto', 11 )
+		self.icon_path = r'resources\images\github\tempus.ico'
+		self.theme_font = ('Roboto', 11)
 		self.scrollbar_color = '#755600'
 		self.form_size = (400, 200)
 		sg.set_global_icon( icon=self.icon_path )
 		sg.set_options( font=self.theme_font )
 		sg.user_settings_save( 'Boo', r'\resources\theme' )
-
-
+	
 	def __dir__( self ) -> List[ str ] | None:
 		'''
 
@@ -120,12 +113,21 @@ class Dark( ):
 			List[ str ] | None
 
 		'''
-		return [ 'form_size', 'theme_background',
-		         'theme_textcolor', 'element_backcolor', 'element_forecolor',
-		         'text_forecolor', 'text_backcolor', 'input_backcolor',
-		         'input_forecolor', 'button_color', 'button_backcolor',
-		         'button_forecolor', 'icon_path', 'theme_font',  'scrollbar_color' ]
-
+		return [ 'form_size',
+		         'theme_background',
+		         'theme_textcolor',
+		         'element_backcolor',
+		         'element_forecolor',
+		         'text_forecolor',
+		         'text_backcolor',
+		         'input_backcolor',
+		         'input_forecolor',
+		         'button_color',
+		         'button_backcolor',
+		         'button_forecolor',
+		         'icon_path',
+		         'theme_font',
+		         'scrollbar_color' ]
 
 class Error( Exception ):
 	'''
@@ -140,9 +142,9 @@ class Error( Exception ):
                 method: str=None, module: str=None )
 
     '''
-
+	
 	def __init__( self, error: Exception, heading: str=None, cause: str=None,
-	              method: str=None, module: str=None ):
+			method: str=None, module: str=None ):
 		super( ).__init__( )
 		self.exception = error
 		self.heading = heading
@@ -152,8 +154,7 @@ class Error( Exception ):
 		self.type = exc_info( )[ 0 ]
 		self.trace = traceback.format_exc( )
 		self.info = str( exc_info( )[ 0 ] ) + ': \r\n \r\n' + traceback.format_exc( )
-
-
+	
 	def __str__( self ) -> str | None:
 		'''
 
@@ -172,8 +173,7 @@ class Error( Exception ):
 		'''
 		if self.info is not None:
 			return self.info
-
-
+	
 	def __dir__( self ) -> List[ str ] | None:
 		'''
 
@@ -190,20 +190,24 @@ class Error( Exception ):
 			List[ str ] | None
 
 		'''
-		return [ 'message', 'cause',  'method', 'module', 'scaler', 'stack_trace', 'info' ]
-
-
+		return [ 'message',
+		         'cause',
+		         'method',
+		         'module',
+		         'scaler',
+		         'stack_trace',
+		         'info' ]
 
 class ErrorDialog( Dark ):
 	'''
-
-	    Construcotr:  ErrorDialog( error )
-
-	    Purpose:  Class that displays excetption target_values that accepts
-            a single, optional argument 'error' of scaler Error
+	
+	    Purpose:
+	    --------
+	    Class that displays excetption target_values that accepts
+         a single, optional argument 'error' of scaler Error
 
     '''
-
+	
 	# Fields
 	error: Optional[ Exception ]
 	heading: Optional[ str ]
@@ -211,14 +215,14 @@ class ErrorDialog( Dark ):
 	info: Optional[ str ]
 	cause: Optional[ str ]
 	method: Optional[ str ]
-
+	
 	def __init__( self, error: Error ):
 		super( ).__init__( )
 		sg.theme( 'DarkGrey15' )
 		sg.theme_input_text_color( '#FFFFFF' )
 		sg.theme_element_text_color( '#69B1EF' )
 		sg.theme_text_color( '#69B1EF' )
-		self.theme_background=sg.theme_background_color( )
+		self.theme_background = sg.theme_background_color( )
 		self.theme_textcolor = sg.theme_text_color( )
 		self.element_forecolor = sg.theme_element_text_color( )
 		self.element_backcolor = sg.theme_background_color( )
@@ -229,11 +233,11 @@ class ErrorDialog( Dark ):
 		self.button_backcolor = sg.theme_button_color_background( )
 		self.button_forecolor = sg.theme_button_color_text( )
 		self.button_color = sg.theme_button_color( )
-		self.icon_path = r'\resources\images\mappy.ico'
+		self.icon_path = r'resources\images\github\tempus.ico'
 		self.theme_font = ('Roboto', 11)
 		self.scrollbar_color = '#755600'
-		sg.set_global_icon( icon = self.icon_path )
-		sg.set_options( font = self.theme_font )
+		sg.set_global_icon( icon=self.icon_path )
+		sg.set_options( font=self.theme_font )
 		sg.user_settings_save( 'Mathy', r'\resources\theme' )
 		self.form_size = (500, 300)
 		self.error = error
@@ -242,8 +246,7 @@ class ErrorDialog( Dark ):
 		self.info = error.trace
 		self.cause = error.cause
 		self.method = error.method
-
-
+	
 	def __str__( self ) -> str | None:
 		'''
 
@@ -261,8 +264,7 @@ class ErrorDialog( Dark ):
 
 		'''
 		return self.info
-
-
+	
 	def __dir__( self ) -> List[ str ] | None:
 		'''
 
@@ -279,16 +281,32 @@ class ErrorDialog( Dark ):
 			List[ str ] | None
 
 		'''
-		return [ 'size', 'settings_path', 'theme_background',
-		         'theme_textcolor', 'element_backcolor', 'element_forecolor',
-		         'text_forecolor', 'text_backcolor', 'input_backcolor',
-		         'input_forecolor', 'button_color', 'button_backcolor',
-		         'button_forecolor', 'icon_path', 'theme_font',
-		         'scrollbar_color', 'progressbar_color',
-		         'info', 'cause', 'method', 'error', 'heading',
-		         'module', 'scaler', 'message' 'show' ]
-
-
+		return [ 'size',
+		         'settings_path',
+		         'theme_background',
+		         'theme_textcolor',
+		         'element_backcolor',
+		         'element_forecolor',
+		         'text_forecolor',
+		         'text_backcolor',
+		         'input_backcolor',
+		         'input_forecolor',
+		         'button_color',
+		         'button_backcolor',
+		         'button_forecolor',
+		         'icon_path',
+		         'theme_font',
+		         'scrollbar_color',
+		         'progressbar_color',
+		         'info',
+		         'cause',
+		         'method',
+		         'error',
+		         'heading',
+		         'module',
+		         'scaler',
+		         'message' 'show' ]
+	
 	def show( self ) -> object:
 		'''
 
@@ -309,25 +327,27 @@ class ErrorDialog( Dark ):
 		_info = f'Module:\t{self.module}\r\nClass:\t{self.cause}\r\n' \
 		        f'Method:\t{self.method}\r\n \r\n{self.info}'
 		_red = '#F70202'
-		_font = ( 'Roboto', 10 )
+		_font = ('Roboto', 10)
 		_padsz = (3, 3)
 		_layout = [ [ sg.Text( ) ],
-		            [ sg.Text( f'{_msg}', size=(100, 1), key='-MSG-', text_color=_red, font=_font ) ],
-		            [ sg.Text( size=( 150, 1 ) ) ],
+		            [ sg.Text( f'{_msg}', size=(100, 1), key='-MSG-', text_color=_red, font=_font
+		            ) ],
+		            [ sg.Text( size=(150, 1) ) ],
 		            [ sg.Multiline( f'{_info}', key='-INFO-', size=(80, 7), pad=_padsz ) ],
 		            [ sg.Text( ) ],
-		            [ sg.Text( size=( 20, 1 ) ), sg.Cancel( size=( 15, 1 ), key='-CANCEL-' ),
-		              sg.Text( size=( 10, 1 ) ), sg.Ok( size=( 15, 1 ), key='-OK-' ) ] ]
-
+		            [ sg.Text( size=(20, 1) ),
+		              sg.Cancel( size=(15, 1), key='-CANCEL-' ),
+		              sg.Text( size=(10, 1) ),
+		              sg.Ok( size=(15, 1), key='-OK-' ) ] ]
+		
 		_window = sg.Window( r' Mathy', _layout,
 			icon=self.icon_path,
 			font=self.theme_font,
 			size=self.form_size )
-
+		
 		while True:
 			_event, _values = _window.read( )
-			if _event in ( sg.WIN_CLOSED, sg.WIN_X_EVENT, 'Canel', '-OK-' ):
+			if _event in (sg.WIN_CLOSED, sg.WIN_X_EVENT, 'Canel', '-OK-'):
 				break
-
+		
 		_window.close( )
-
