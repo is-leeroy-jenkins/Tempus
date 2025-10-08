@@ -43,8 +43,9 @@
 from __future__ import annotations
 import traceback
 from sys import exc_info
-from typing import List, Optional
+from typing import List, Optional, Tuple
 import FreeSimpleGUI as sg
+import html
 
 class Dark( ):
 	'''
