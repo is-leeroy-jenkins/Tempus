@@ -1,14 +1,14 @@
 ###### tempus
 ![](https://github.com/is-leeroy-jenkins/Tempus/blob/master/resources/images/github/project_tempus.png)
 
-> Modern Fiscal & Calendar Utilities for Python  
+> Modern Federal Fiscal Year & Calendar Utilities for Python  
 > Precise, production-ready tools to unify U.S. fiscal year (FY) and calendar year (CY) calculations, including workdays, weekends, and official U.S. federal holidays — all with a clean, well-documented API.
 
 
 
 ## 📝 Features
 
-- **Fiscal Year Engine**  
+- **Federal Fiscal Year Engine**  
   Compute CY, FY, Beginning/Ending FY (BBFY/EBFY), and both calendar/fiscal boundaries.
 
 - **Elapsed & Remaining Counters**  
